@@ -1,0 +1,17 @@
+---
+- name: Do some checks
+  hosts: localhost
+  tasks:
+    - name: Execute command
+      command: date
+    - name: Print current user
+      command: whoami
+
+- name: Compose file
+  hosts: localhost
+  tasks:
+    - name: Fill soma data to file
+      shell: echo $RANDOM > /tmp/test_data.file
+    - name: Print data from file
+      command: cat /tmp/test_data.file
+

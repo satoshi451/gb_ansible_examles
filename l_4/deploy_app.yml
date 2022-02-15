@@ -1,0 +1,22 @@
+---
+- name: PRepare servers
+  hosts: server
+  roles:
+    - { role: order_vm_at_aws, tags: [aws, prepare] }
+    - { role: create_user, tags: [prepare] }
+    - { role: nginx, tags: [deploy, nginx] }
+    - { role: ngix_cfg, tags: [cfg, nginx] }
+    - { role: redis, tags: [deploy, redis] }
+    - { role: redis_cfg, tags: [cfg, redis] }
+    - { role: cozy_app_deploy, tags: [deploy, app] }
+
+- name: Check and test
+  hosts: server
+  roles:
+    - { role: integration_test, tags: [test] }
+    - { role: db_test, tags: [db, test] }
+    - { role: notify_test_results, tags: [test] }
+    - { role: upload_report_2s3, tags: [aws] }
+
+
+

@@ -1,0 +1,134 @@
+2022-02-12 00:48:47,711 p=767476 u=mimir |  ansible-playbook 2.8.8
+  config file = /home/mimir/code/ansible/l_4/ansible.cfg
+  configured module search path = ['/home/mimir/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.9/dist-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.9.2 (default, Feb 28 2021, 17:03:44) [GCC 10.2.1 20210110]
+2022-02-12 00:48:47,711 p=767476 u=mimir |  Using /home/mimir/code/ansible/l_4/ansible.cfg as config file
+2022-02-12 00:48:51,755 p=767476 u=mimir |  PLAYBOOK: 4.yml **********************************************************************************************************************************
+2022-02-12 00:48:51,755 p=767476 u=mimir |  2 plays in 4.yml
+2022-02-12 00:48:51,771 p=767476 u=mimir |  PLAY [Deploy nginx] ******************************************************************************************************************************
+2022-02-12 00:48:51,780 p=767476 u=mimir |  TASK [Gathering Facts] ***************************************************************************************************************************
+2022-02-12 00:48:51,780 p=767476 u=mimir |  task path: /home/mimir/code/ansible/l_4/4.yml:2
+2022-02-12 00:48:53,006 p=767476 u=mimir |  ok: [nginx-srv1]
+2022-02-12 00:48:53,007 p=767476 u=mimir |  META: ran handlers
+2022-02-12 00:48:53,017 p=767476 u=mimir |  TASK [nginx : Install nginx package] *************************************************************************************************************
+2022-02-12 00:48:53,018 p=767476 u=mimir |  task path: /home/mimir/code/ansible/l_4/roles/nginx/tasks/main.yml:2
+2022-02-12 00:48:54,202 p=767476 u=mimir |  [DEPRECATION WARNING]: State 'installed' is deprecated. Using state 'present' instead.. This feature will be removed in version 2.9. Deprecation 
+warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2022-02-12 00:48:54,202 p=767476 u=mimir |  ok: [nginx-srv1] => {
+    "cache_update_time": 1644594540,
+    "cache_updated": false,
+    "changed": false
+}
+2022-02-12 00:48:54,225 p=767476 u=mimir |  TASK [nginx : debug] *****************************************************************************************************************************
+2022-02-12 00:48:54,225 p=767476 u=mimir |  task path: /home/mimir/code/ansible/l_4/roles/nginx/tasks/main.yml:7
+2022-02-12 00:48:54,243 p=767476 u=mimir |  ok: [nginx-srv1] => {
+    "role_path": "/home/mimir/code/ansible/l_4/roles/nginx"
+}
+2022-02-12 00:48:54,262 p=767476 u=mimir |  TASK [nginx : Upload rendered nginx.conf] ********************************************************************************************************
+2022-02-12 00:48:54,262 p=767476 u=mimir |  task path: /home/mimir/code/ansible/l_4/roles/nginx/tasks/main.yml:10
+2022-02-12 00:48:55,053 p=767476 u=mimir |  ok: [nginx-srv1] => {
+    "changed": false,
+    "checksum": "f2bc6e2bc9d1d4a1d6c16995fa91999cafa14a19",
+    "dest": "/etc/nginx/nginx.conf",
+    "gid": 0,
+    "group": "root",
+    "mode": "0644",
+    "owner": "root",
+    "path": "/etc/nginx/nginx.conf",
+    "size": 1048,
+    "state": "file",
+    "uid": 0
+}
+2022-02-12 00:48:55,075 p=767476 u=mimir |  TASK [nginx : Download typical file] *************************************************************************************************************
+2022-02-12 00:48:55,075 p=767476 u=mimir |  task path: /home/mimir/code/ansible/l_4/roles/nginx/tasks/main.yml:15
+2022-02-12 00:48:56,088 p=767476 u=mimir |  ok: [nginx-srv1] => {
+    "changed": false,
+    "checksum_dest": "97bdbfb82fffda076de1d856c17e7dc8d4f1c185",
+    "checksum_src": "97bdbfb82fffda076de1d856c17e7dc8d4f1c185",
+    "dest": "/tmp/github_README.rst",
+    "elapsed": 0,
+    "gid": 0,
+    "group": "root",
+    "md5sum": "8ddda78c7ce2d19b601fa7474199cc90",
+    "mode": "0644",
+    "owner": "root",
+    "size": 5697,
+    "src": "/home/mimir/.ansible/tmp/ansible-tmp-1644601735.0862267-156499303800994/tmp1y2i0bl8",
+    "state": "file",
+    "status_code": 200,
+    "uid": 0,
+    "url": "https://raw.githubusercontent.com/ansible/ansible/devel/README.rst"
+}
+
+MSG:
+
+OK (5697 bytes)
+
+2022-02-12 00:48:56,110 p=767476 u=mimir |  TASK [nginx : Print readme_stdout] ***************************************************************************************************************
+2022-02-12 00:48:56,111 p=767476 u=mimir |  task path: /home/mimir/code/ansible/l_4/roles/nginx/tasks/main.yml:21
+2022-02-12 00:48:56,132 p=767476 u=mimir |  ok: [nginx-srv1] => {
+    "readme_stdout": {
+        "changed": false,
+        "checksum_dest": "97bdbfb82fffda076de1d856c17e7dc8d4f1c185",
+        "checksum_src": "97bdbfb82fffda076de1d856c17e7dc8d4f1c185",
+        "dest": "/tmp/github_README.rst",
+        "elapsed": 0,
+        "failed": false,
+        "gid": 0,
+        "group": "root",
+        "md5sum": "8ddda78c7ce2d19b601fa7474199cc90",
+        "mode": "0644",
+        "msg": "OK (5697 bytes)",
+        "owner": "root",
+        "size": 5697,
+        "src": "/home/mimir/.ansible/tmp/ansible-tmp-1644601735.0862267-156499303800994/tmp1y2i0bl8",
+        "state": "file",
+        "status_code": 200,
+        "uid": 0,
+        "url": "https://raw.githubusercontent.com/ansible/ansible/devel/README.rst"
+    }
+}
+2022-02-12 00:48:56,153 p=767476 u=mimir |  TASK [nginx : Print elapsed] *********************************************************************************************************************
+2022-02-12 00:48:56,154 p=767476 u=mimir |  task path: /home/mimir/code/ansible/l_4/roles/nginx/tasks/main.yml:25
+2022-02-12 00:48:56,547 p=767476 u=mimir |  changed: [nginx-srv1] => {
+    "changed": true,
+    "cmd": [
+        "echo",
+        "0"
+    ],
+    "delta": "0:00:00.003212",
+    "end": "2022-02-12 00:48:56.514088",
+    "rc": 0,
+    "start": "2022-02-12 00:48:56.510876"
+}
+
+STDOUT:
+
+0
+
+2022-02-12 00:48:56,567 p=767476 u=mimir |  TASK [nginx : Exec URI] **************************************************************************************************************************
+2022-02-12 00:48:56,568 p=767476 u=mimir |  task path: /home/mimir/code/ansible/l_4/roles/nginx/tasks/main.yml:28
+2022-02-12 00:48:57,083 p=767476 u=mimir |  fatal: [nginx-srv1]: FAILED! => {
+    "changed": false,
+    "content": "",
+    "elapsed": 0,
+    "redirected": false,
+    "status": -1,
+    "url": "http://localhost:8888"
+}
+
+MSG:
+
+Status code was -1 and not [501]: Request failed: <urlopen error [Errno 111] В соединении отказано>
+
+2022-02-12 00:48:57,084 p=767476 u=mimir |  PLAY RECAP ***************************************************************************************************************************************
+2022-02-12 00:48:57,084 p=767476 u=mimir |  nginx-srv1                 : ok=7    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-02-12 01:05:50,611 p=769799 u=mimir |  [WARNING]: module status not found in: /home/mimir/.ansible/plugins/modules:/usr/share/ansible/plugins/modules:/usr/local/lib/python3.9/dist-
+packages/ansible/modules
+
+2022-02-12 01:05:56,377 p=769801 u=mimir |  [WARNING]: template parsing did not produce documentation.
+
+2022-02-12 01:05:56,408 p=769801 u=mimir |  [WARNING]: win_template parsing did not produce documentation.
+

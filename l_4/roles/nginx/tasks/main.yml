@@ -1,0 +1,35 @@
+---
+- name: Install nginx package
+  package:
+    name: nginx
+    state: installed
+
+- debug:
+    var: role_path
+
+- name: Upload rendered nginx.conf
+  template:
+    src: "{{ role_path }}/templates/nginx.conf.j2"
+    dest: "/etc/nginx/nginx.conf"
+
+- name: Download typical file
+  get_url:
+    url: "https://raw.githubusercontent.com/ansible/ansible/devel/README.rst"
+    dest: "/tmp/github_README.rst"
+  register: readme_stdout
+
+- name: Print readme_stdout
+  debug:
+    var: readme_stdout
+
+- name: Print elapsed
+  command: "echo {{ readme_stdout.elapsed }}"
+
+- name: Exec URI
+  uri:
+    url: "http://localhost:8888"
+    user: "app_user"
+    password: "app_password"
+    method: POST
+    force_basic_auth: true
+    status_code: 501

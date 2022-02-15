@@ -1,0 +1,7 @@
+---
+user:
+  login: "another_app"
+  password: "pass"
+  group: "app"
+
+default: "true"

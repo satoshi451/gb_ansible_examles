@@ -1,0 +1,13 @@
+---
+- name: Prepare user
+  hosts: server
+  become: true
+  roles:
+    - role: os_prepare
+      tags: [prepare]
+      when: default | default('false') == "false"
+
+- name: Upload some files
+  hosts: application
+  roles:
+    - role: upload

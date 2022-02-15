@@ -1,0 +1,25 @@
+---
+- name: Check values
+  assert:
+    that:
+      - root_dir is defined
+    fail_msg: "'root_dir' must be defined"
+    success_msg: "'root_dir' is {{ root_dir }}"
+
+- name: Create root directory
+  file:
+    path: "{{ root_dir }}"
+    state: directory
+  register: dir_out
+
+- name: Print directory output
+  debug:
+    var: dir_out
+  when: debug_out | default('false') | bool
+
+- name: Place data to file
+  copy:
+    content: "{{ data }}"
+    dest: "{{ root_dir }}/data_file.txt"
+  tags: data
+

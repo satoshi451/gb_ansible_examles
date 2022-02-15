@@ -1,0 +1,42 @@
+---
+- name: Create User and group
+  block:
+    - name: Create group
+      group:
+        name: "{{ user.group }}"
+    - name: Create user 
+      user:
+        name: "{{ user.login }}"
+        password: "{{ user.password | password_hash('sha512') }}"
+        shell: /bin/bash
+        group: "{{ user.group }}"
+  rescue:
+    - name: Rollback changes if need
+      command: date
+      
+- name: Install packages
+  package:
+    name:
+      - iftop
+      - htop
+      - vim
+      - tcpdump
+        #      - python-pip  
+    state: latest
+
+- name: Intall docker-py
+  pip:
+    name: docker-py
+
+- name: Ensure docker service started
+  systemd:
+    name: docker
+    state: started    
+    enabled: true
+    
+- name: Start rabbitmq in docker container
+  docker_container:
+    name: rabbitmq_container          
+    image: rabbitmq:latest
+    state: started
+

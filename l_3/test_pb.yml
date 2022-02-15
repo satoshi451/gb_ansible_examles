@@ -1,0 +1,5 @@
+---
+- name: Do some actions
+  hosts: localhost
+  roles:
+    - test_includes

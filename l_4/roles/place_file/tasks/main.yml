@@ -1,0 +1,10 @@
+---
+- name: "Create {{ root_dir }}"
+  file:
+    path: "{{ root_dir }}"
+    state: directory
+
+- name: "Place some file to {{ root_dir }}"
+  copy:
+    dest: "{{ root_dir}}/placed_file.cfg"
+    content: 'Some text in placed file'

@@ -1,0 +1,13 @@
+[backend]
+serv-local ansible_connection=local ansible_host=localhost
+
+[nginx]
+nginx-srv1 ansible_connection=ssh ansible_host=srv-1 ansible_user=mimir
+nginx-srv2 ansible_connection=ssh ansible_host=srv-2 ansible_user=mimir
+nginx-srv3 ansible_connection=ssh ansible_host=srv-3 ansible_user=mimir
+
+[app]
+app-1 ansible_connection=ssh ansible_host=192.168.42.100 nginx_upstream_host=10.0.4.10
+app-2 ansible_connection=ssh ansible_host=192.168.42.200 nginx_upstream_host=10.0.4.20
+app-3 ansible_connection=ssh ansible_host=192.168.42.300 nginx_upstream_host=10.0.4.30
+

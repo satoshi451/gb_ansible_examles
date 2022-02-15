@@ -1,0 +1,11 @@
+---
+- name: Do some stub actions
+  include_tasks: default.yml
+  when: default == "true"
+
+- name: Do some not default actions
+  include_tasks: not_default.yml
+  when: default != "true"
+
+
+ 

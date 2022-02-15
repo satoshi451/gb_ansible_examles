@@ -1,0 +1,6 @@
+---
+- name: Execute some cmds
+  hosts: server
+  tasks:
+    - name: Execute date
+      command: date

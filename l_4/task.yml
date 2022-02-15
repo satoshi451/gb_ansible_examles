@@ -1,0 +1,8 @@
+- name: Check nginx is responsing
+  uri:
+    url: "http://{{ ansible_host }}:{{ nginx_port }}"
+    method: GET
+    response_code: 200
+    timeout: 1
+
+- name: Check if service is up
