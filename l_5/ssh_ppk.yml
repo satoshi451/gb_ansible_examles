@@ -2,5 +2,12 @@
 - name: Execute some cmds
   hosts: server
   tasks:
-    - name: Execute date
-      command: date
+    - name: "Create {{ base_dir }}"
+      file:
+        path: "{{ base_dir }}"
+        state: directory
+
+    - name: Create file
+      file:
+        path: "{{ base_dir }}/mysql.conf"
+        state: touch

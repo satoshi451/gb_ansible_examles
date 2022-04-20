@@ -1,2 +1,8 @@
 [server]
-localhost
+srv1-local ansible_host=localhost base_dir="/tmp/instance1"
+srv2-local ansible_host=localhost base_dir="/tmp/instance2"
+srv3-local ansible_host=localhost base_dir="/tmp/instance3"
+srv4-local ansible_host=localhost base_dir="/tmp/instance4"
+
+[server:vars]
+base_dir="/tmp/{{ inventory_hostname }}"

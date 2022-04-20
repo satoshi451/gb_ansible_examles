@@ -1,0 +1,5 @@
+---
+nginx:
+  port: 8080
+  worker_processes: 1024
+  log_file: "/var/log/nginx/myapp.log"

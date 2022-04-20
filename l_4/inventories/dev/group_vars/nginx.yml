@@ -1,0 +1,5 @@
+---
+nginx:
+  config:
+    static_file_path: "/tmp/temp_123_from_inventory"
+  port: 8080

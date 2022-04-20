@@ -1,0 +1,6 @@
+---
+- name: Deploy app
+  hosts: app
+  tasks:
+    - name: Deploy app (stub)
+      command: echo app has been deployed

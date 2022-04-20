@@ -1,0 +1,9 @@
+---
+- name: Deploy nginx
+  import_playbook: nginx.yaml
+  when: nginx.enabled | default('false') | bool
+
+- name: Deploy rabbitmq
+  import_playbook: rabbitmq.yaml
+  when: rabbitmq.enabled | default('false') | bool
+

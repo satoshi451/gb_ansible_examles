@@ -1,0 +1,6 @@
+---
+- name: This is common role. Create base dir
+  file:
+    path: "/tmp/base"
+    state: directory
+

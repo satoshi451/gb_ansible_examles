@@ -1,0 +1,146 @@
+2022-04-13 22:34:17,783 p=mimir u=458771 | ansible-playbook 2.9.0
+  config file = /home/mimir/code/ansible/gb_ansible_examles/l_8/ansible.cfg
+  configured module search path = ['/home/mimir/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.9/dist-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.9.2 (default, Feb 28 2021, 17:03:44) [GCC 10.2.1 20210110]
+2022-04-13 22:34:17,783 p=mimir u=458771 | Using /home/mimir/code/ansible/gb_ansible_examles/l_8/ansible.cfg as config file
+2022-04-13 22:34:17,963 p=mimir u=458771 | PLAYBOOK: simple.yaml *******************************************************************************************************************************************************
+2022-04-13 22:34:17,963 p=mimir u=458771 | 1 plays in simple.yaml
+2022-04-13 22:34:17,965 p=mimir u=458771 | PLAY [Compose file] *********************************************************************************************************************************************************
+2022-04-13 22:34:17,972 p=mimir u=458771 | TASK [Gathering Facts] ******************************************************************************************************************************************************
+2022-04-13 22:34:18,782 p=mimir u=458771 | ok: [127.0.0.1]
+2022-04-13 22:34:18,783 p=mimir u=458771 | META: ran handlers
+2022-04-13 22:34:18,796 p=mimir u=458771 | TASK [common : This is common role. Create base dir] ************************************************************************************************************************
+2022-04-13 22:34:19,033 p=mimir u=458771 | ok: [127.0.0.1] => {"changed": false, "gid": 1001, "group": "mimir", "mode": "0755", "owner": "mimir", "path": "/tmp/base", "size": 4096, "state": "directory", "uid": 1001}
+2022-04-13 22:34:19,047 p=mimir u=458771 | TASK [ensure_file : Create file] ********************************************************************************************************************************************
+2022-04-13 22:34:19,269 p=mimir u=458771 | ok: [127.0.0.1] => {"changed": false, "gid": 1001, "group": "mimir", "mode": "0755", "owner": "mimir", "path": "/tmp/file", "size": 4096, "state": "directory", "uid": 1001}
+2022-04-13 22:34:19,270 p=mimir u=458771 | META: ran handlers
+2022-04-13 22:34:19,270 p=mimir u=458771 | META: ran handlers
+2022-04-13 22:34:19,271 p=mimir u=458771 | PLAY RECAP ******************************************************************************************************************************************************************
+2022-04-13 22:34:19,271 p=mimir u=458771 | 127.0.0.1                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-04-13 22:44:09,518 p=mimir u=462830 | ansible-playbook 2.9.0
+  config file = /home/mimir/code/ansible/gb_ansible_examles/l_8/ansible.cfg
+  configured module search path = ['/home/mimir/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.9/dist-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.9.2 (default, Feb 28 2021, 17:03:44) [GCC 10.2.1 20210110]
+2022-04-13 22:44:09,518 p=mimir u=462830 | Using /home/mimir/code/ansible/gb_ansible_examles/l_8/ansible.cfg as config file
+2022-04-13 22:44:09,701 p=mimir u=462830 | Executing playbook simple.yaml
+2022-04-13 22:44:09,701 p=mimir u=462830 | 1 plays in simple.yaml
+2022-04-13 22:44:09,703 p=mimir u=462830 | - Compose file on hosts: srv -
+2022-04-13 22:44:09,710 p=mimir u=462830 | Gathering Facts...
+2022-04-13 22:44:10,546 p=mimir u=462830 |   127.0.0.1 ok
+2022-04-13 22:44:10,546 p=mimir u=462830 | META: ran handlers
+2022-04-13 22:44:10,559 p=mimir u=462830 | This is common role. Create base dir...
+2022-04-13 22:44:10,802 p=mimir u=462830 |   127.0.0.1 ok: {
+    "changed": false,
+    "gid": 1001,
+    "group": "mimir",
+    "mode": "0755",
+    "owner": "mimir",
+    "path": "/tmp/base",
+    "size": 4096,
+    "state": "directory",
+    "uid": 1001
+}
+2022-04-13 22:44:10,815 p=mimir u=462830 | Create file...
+2022-04-13 22:44:10,976 p=mimir u=462830 |   127.0.0.1 ok: {
+    "changed": false,
+    "gid": 1001,
+    "group": "mimir",
+    "mode": "0755",
+    "owner": "mimir",
+    "path": "/tmp/file",
+    "size": 4096,
+    "state": "directory",
+    "uid": 1001
+}
+2022-04-13 22:44:10,977 p=mimir u=462830 | META: ran handlers
+2022-04-13 22:44:10,977 p=mimir u=462830 | META: ran handlers
+2022-04-13 22:44:10,979 p=mimir u=462830 |   127.0.0.1                  : ok=3    changed=0    unreachable=0    failed=0    rescued=0    ignored=0   
+2022-04-13 22:51:13,219 p=mimir u=465332 | ansible-playbook 2.9.0
+  config file = /home/mimir/code/ansible/gb_ansible_examles/l_8/ansible.cfg
+  configured module search path = ['/home/mimir/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.9/dist-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.9.2 (default, Feb 28 2021, 17:03:44) [GCC 10.2.1 20210110]
+2022-04-13 22:51:13,219 p=mimir u=465332 | Using /home/mimir/code/ansible/gb_ansible_examles/l_8/ansible.cfg as config file
+2022-04-13 22:51:13,382 p=mimir u=465332 | Executing playbook simple.yaml
+2022-04-13 22:51:13,382 p=mimir u=465332 | 1 plays in simple.yaml
+2022-04-13 22:51:13,383 p=mimir u=465332 | - Compose file on hosts: srv -
+2022-04-13 22:51:13,390 p=mimir u=465332 | Gathering Facts...
+2022-04-13 22:51:14,223 p=mimir u=465332 |   127.0.0.1 ok
+2022-04-13 22:51:14,224 p=mimir u=465332 | META: ran handlers
+2022-04-13 22:51:14,229 p=mimir u=465332 | This is common role. Create base dir...
+2022-04-13 22:51:14,462 p=mimir u=465332 |   127.0.0.1 ok: {
+    "changed": false,
+    "gid": 1001,
+    "group": "mimir",
+    "mode": "0755",
+    "owner": "mimir",
+    "path": "/tmp/base",
+    "size": 4096,
+    "state": "directory",
+    "uid": 1001
+}
+2022-04-13 22:51:14,475 p=mimir u=465332 | Create file...
+2022-04-13 22:51:14,630 p=mimir u=465332 |   127.0.0.1 ok: {
+    "changed": false,
+    "gid": 1001,
+    "group": "mimir",
+    "mode": "0755",
+    "owner": "mimir",
+    "path": "/tmp/file",
+    "size": 4096,
+    "state": "directory",
+    "uid": 1001
+}
+2022-04-13 22:51:14,631 p=mimir u=465332 | META: ran handlers
+2022-04-13 22:51:14,631 p=mimir u=465332 | META: ran handlers
+2022-04-13 22:51:14,633 p=mimir u=465332 |   127.0.0.1                  : ok=3    changed=0    unreachable=0    failed=0    rescued=0    ignored=0   
+2022-04-13 23:37:22,629 p=mimir u=516908 | ansible-playbook 2.9.0
+  config file = /home/mimir/code/ansible/gb_ansible_examles/l_8/ansible.cfg
+  configured module search path = ['/home/mimir/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.9/dist-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.9.2 (default, Feb 28 2021, 17:03:44) [GCC 10.2.1 20210110]
+2022-04-13 23:37:22,629 p=mimir u=516908 | Using /home/mimir/code/ansible/gb_ansible_examles/l_8/ansible.cfg as config file
+2022-04-13 23:37:22,859 p=mimir u=516908 | Executing playbook simple.yaml
+2022-04-13 23:37:22,859 p=mimir u=516908 | 1 plays in simple.yaml
+2022-04-13 23:37:22,861 p=mimir u=516908 | - Compose file on hosts: srv -
+2022-04-13 23:37:22,866 p=mimir u=516908 | META: ran handlers
+2022-04-13 23:37:22,870 p=mimir u=516908 | This is common role. Create base dir...
+2022-04-13 23:37:23,218 p=mimir u=516908 | [WARNING]: Platform linux on host 127.0.0.1 is using the discovered Python interpreter at /usr/bin/python3, but future
+installation of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2022-04-13 23:37:23,218 p=mimir u=516908 |   127.0.0.1 ok: {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "gid": 1001,
+    "group": "mimir",
+    "mode": "0755",
+    "owner": "mimir",
+    "path": "/tmp/base",
+    "size": 4096,
+    "state": "directory",
+    "uid": 1001
+}
+2022-04-13 23:37:23,220 p=mimir u=516908 | Create file...
+2022-04-13 23:37:23,426 p=mimir u=516908 |   127.0.0.1 ok: {
+    "changed": false,
+    "gid": 1001,
+    "group": "mimir",
+    "mode": "0755",
+    "owner": "mimir",
+    "path": "/tmp/file",
+    "size": 4096,
+    "state": "directory",
+    "uid": 1001
+}
+2022-04-13 23:37:23,427 p=mimir u=516908 | META: ran handlers
+2022-04-13 23:37:23,427 p=mimir u=516908 | META: ran handlers
+2022-04-13 23:37:23,428 p=mimir u=516908 |   127.0.0.1                  : ok=2    changed=0    unreachable=0    failed=0    rescued=0    ignored=0   

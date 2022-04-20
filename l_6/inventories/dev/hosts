@@ -1,0 +1,35 @@
+[mysql]
+mysql-local ansible_host=127.0.0.1 ansible_connection=local
+
+#[nginx]
+#nginx-srv1 ansible_host=srv-1 ansible_user=mimir
+#nginx-srv2 ansible_host=srv-2 ansible_user=mimir
+#nginx-srv3 ansible_host=srv-3 ansible_user=mimir
+
+[nginx:children]
+nginx_west
+nginx_east
+
+[nginx_west:children]
+nginx_west_hot
+nginx_west_standby
+
+[nginx_east:children]
+nginx_east_hot
+nginx_east_standby
+
+[nginx_west_hot]
+nginx-west-host-1 ansible_host=localhost
+nginx-west-host-2 ansible_host=localhost
+
+[nginx_west_standby]
+nginx-west-standby-1 ansible_host=localhost
+nginx-west-standby-2 ansible_host=localhost
+
+[nginx_east_hot]
+nginx-east-hot-1 ansible_host=localhost
+nginx-east-hot-2 ansible_host=localhost
+
+[nginx_east_standby]
+nginx-east-standby-1 ansible_host=localhost
+nginx-east-standby-2 ansible_host=localhost

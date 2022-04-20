@@ -1,0 +1,33 @@
+---
+- name: Deploy few docker containers
+  hosts: localhost
+  tasks:
+    - name: Create host dirs
+      file:
+        path: "/tmp/{{ item }}"
+        state: directory
+      with_items:
+        - nginx
+        - nginx/srv1
+        - nginx/srv2
+
+    - name: Create nginx configs
+      file:
+        path: "/tmp/nginx/{{ item }}"
+        state: touch
+      with_items:
+        - nginx-srv1.conf
+        - nginx-srv2.conf
+
+    - name: Deploy nginx
+      docker_container:
+        name: "nginx-{{ item.container_name }}"
+        image: "nginx:{{ item.tag }}"
+          #        volumes:
+          #- "{{ item.config }}:/etc/nginx/nginx.conf:ro"
+        ports:
+        - "{{ item.port }}:80"
+      with_items:
+        - { container_name: nginx-1, tag: latest, port: 9091, config: /tmp/nginx/nginx-srv1.conf }
+        - { container_name: nginx-2, tag: latest, port: 9092, config: /tmp/nginx/nginx-srv2.conf }
+

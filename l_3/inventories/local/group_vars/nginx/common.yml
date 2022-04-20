@@ -1,0 +1,4 @@
+---
+nginx:
+  port: 8080
+  upstreamHostName: nginx.host.domain.ru

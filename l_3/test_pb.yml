@@ -1,5 +1,7 @@
 ---
 - name: Do some actions
   hosts: localhost
+  vars_files:
+    - config_vault.yml
   roles:
     - test_includes

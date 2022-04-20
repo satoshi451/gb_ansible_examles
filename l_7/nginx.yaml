@@ -1,0 +1,6 @@
+---
+- name: Deploy nginx
+  hosts: nginx
+  roles:
+    - { role: nginx, tags: [deploy] }
+    - { role: nginx_tests, tags: [tests] }

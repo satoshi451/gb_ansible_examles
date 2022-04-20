@@ -1,0 +1,7 @@
+[nginx]
+nginx-local ansible_connection=local ansible_host=localhost
+
+[app]
+app-srv1 ansible_connection=local ansible_host=localhost nginx_upstream_host=10.10.0.1
+app-srv2 ansible_connection=local ansible_host=localhost nginx_upstream_host=10.10.0.2
+app-srv3 ansible_connection=local ansible_host=localhost nginx_upstream_host=10.10.0.3 backup=true

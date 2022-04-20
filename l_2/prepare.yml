@@ -3,9 +3,14 @@
   hosts: server
   become: true
   roles:
-    - role: os_prepare
-      tags: [prepare]
-      when: default | default('false') == "false"
+    - { role: os_prepare, tags: [prepare] }
+
+- name: Prepare user DUPLICATE INVOCATION
+  hosts: server
+  become: true
+  roles:
+    - { role: os_prepare, tags: [another_tag] }
+
 
 - name: Upload some files
   hosts: application

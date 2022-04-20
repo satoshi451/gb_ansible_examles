@@ -1,8 +1,19 @@
 ---
+- name: Check required values
+  assert:
+    that:
+      - nginx is defined
+      - nginx.config is defined
+    fail_msg: "nginx variable must be defined"
+
 - name: Install nginx package
   package:
     name: nginx
     state: installed
+
+- name: Execute some command
+  command: "/opt/app/application --pass={{ app.password }} --secret-key={{ app.secret_key }}"
+  no_log: debug_passwords  | default('false') | bool
 
 - debug:
     var: role_path
@@ -15,7 +26,7 @@
 - name: Download typical file
   get_url:
     url: "https://raw.githubusercontent.com/ansible/ansible/devel/README.rst"
-    dest: "/tmp/github_README.rst"
+    dest: "{{ nginx.config.static_file_path | default('/tmp/asd') }}/github_README.rst"
   register: readme_stdout
 
 - name: Print readme_stdout

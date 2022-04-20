@@ -1,0 +1,4 @@
+[nginx]
+another-ngx-1 ansible_host=localhost
+another-ngx-2 ansible_host=localhost
+another-ngx-3 ansible_host=localhost

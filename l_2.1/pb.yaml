@@ -1,0 +1,6 @@
+---
+- name: Ensure file system
+  hosts: servers
+  roles:
+    - file_ensure
+

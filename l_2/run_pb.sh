@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-ansible-playbook -vv \
+ansible-playbook \
 	-i inventory/dev/dev.ini \
 	-k -K \
         prepare.yml "$@"

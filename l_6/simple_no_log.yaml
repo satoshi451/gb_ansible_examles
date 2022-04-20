@@ -1,0 +1,13 @@
+---
+- name: Test no_log
+  hosts: srv
+  tasks:
+    - name: Echo some passwords
+      command: echo password is "{{ item }}"
+      no_log: true
+      with_items:
+        - "{{ password | default('password') }}"
+        - password
+
+    - name: execute command with long params
+      command: echo ./my_app "{{ app_params | default('--token=asdasdasD@#$DA --login=user1') }}"

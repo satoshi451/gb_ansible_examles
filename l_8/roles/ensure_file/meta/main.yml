@@ -1,0 +1,5 @@
+---
+dependencies:
+  - role: common
+    foo: "bar"
+      #when: backup | default('false') | bool

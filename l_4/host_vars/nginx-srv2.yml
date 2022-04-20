@@ -1,0 +1,4 @@
+---
+nginx:
+  config:
+    static_file_path: "/tmp/from_host_vars_from_playbook_vars"

@@ -1,0 +1,6 @@
+---
+- name: Create file
+  file:
+    path: "{{ file.path }}"
+    state: "{{ file.state }}"
+

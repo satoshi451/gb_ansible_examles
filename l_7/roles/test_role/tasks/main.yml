@@ -1,0 +1,5 @@
+---
+- name: echo ciao
+  file:
+    path: /tmp/temp_temp
+    state: directory

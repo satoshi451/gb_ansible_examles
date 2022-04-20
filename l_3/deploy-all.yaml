@@ -1,0 +1,8 @@
+---
+- name: Run nginx playbook
+  import_playbook: nginx.yaml
+  when: var == true
+
+- name: Run app playbook
+  import_playbook: app.yaml
+  when: var == false

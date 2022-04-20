@@ -1,0 +1,5 @@
+---
+- name: Create Base directory
+  file:
+    path: "{{ base_dir | default('/tmp/test_dir') }}"
+    state: directory

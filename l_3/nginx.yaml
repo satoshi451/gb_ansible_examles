@@ -1,0 +1,6 @@
+---
+- name: Deploy nginx
+  hosts: nginx
+  tasks:
+    - name: Deploy nginx command (stub)
+      command: echo nginx has been deployed

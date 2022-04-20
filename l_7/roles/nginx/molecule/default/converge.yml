@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include custom.nginx"
+      include_role:
+        name: "custom.nginx"

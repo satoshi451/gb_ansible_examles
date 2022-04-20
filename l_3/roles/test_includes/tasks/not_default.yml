@@ -1,3 +1,0 @@
----
-- name: Do some not default actions in not_default.yml
-  command: echo Im not default banana man

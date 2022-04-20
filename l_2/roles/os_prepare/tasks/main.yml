@@ -35,6 +35,7 @@
     enabled: true
     
 - name: Start rabbitmq in docker container
+  when: false
   docker_container:
     name: rabbitmq_container          
     image: rabbitmq:latest

@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include common.redis"
+      include_role:
+        name: "common.redis"

@@ -1,0 +1,19 @@
+===================
+yamllint
+===================
+yaml:
+key: value
+list: [1, 2, 3]
+dict: {"foo": "bar", "drain": 1 }
+
+
+
+===================
+ansible-lint
+===================
+play
+- name: asdasd # hosts?
+  roles:
+    - asada
+
+

@@ -1,0 +1,6 @@
+---
+- name: Compose file
+  hosts: srv
+  gather_facts: false
+  roles:
+    - ensure_file

@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Download file
+      get_url:
+        url: "https://raw.githubusercontent.com/ansible/ansible/devel/README.rsts"
+        dest: /tmp/README.md
+      register: http_result
+      ignore_errors: true
+
+    - debug:
+        var: http_result
+
+    - fail:
+        msg: "Status code is not 200"
+      when: http_result.status_code != 200

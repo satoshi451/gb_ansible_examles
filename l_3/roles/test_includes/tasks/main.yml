@@ -1,11 +1,12 @@
 ---
-- name: Do some stub actions
-  include_tasks: default.yml
-  when: default == "true"
+- name: Execute setup.yml tasks
+  include_tasks: setup.yml
+  when: setup | bool
 
-- name: Do some not default actions
-  include_tasks: not_default.yml
-  when: default != "true"
+- name: Execute always.yml tasks
+  include_tasks: always.yml
 
+- name: Execute teardown.yml tasks
+  include_tasks: teardown.yml
+  when: teardown| default('false') | bool
 
- 

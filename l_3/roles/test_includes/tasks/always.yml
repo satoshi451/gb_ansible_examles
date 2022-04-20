@@ -1,0 +1,5 @@
+---
+- name: Render nginx.conf
+  template:
+    src: nginx.conf.j2
+    dest: /tmp/nginx.conf

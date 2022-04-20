@@ -1,3 +1,6 @@
 ---
 ansible_user: "mimir"
 
+app:
+  password: "superduperpassword"
+  secret_key: "dangerous-secret"

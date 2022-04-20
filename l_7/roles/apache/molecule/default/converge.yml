@@ -1,0 +1,8 @@
+---
+- name: Converge
+  hosts: all
+  connection: local
+  tasks:
+    - name: "Include common.apache"
+      include_role:
+        name: "common.apache"

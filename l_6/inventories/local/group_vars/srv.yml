@@ -1,0 +1,6 @@
+---
+app_params: >
+  --token=asdasdasdasdasd
+  --login=someusername
+  --password-hash=12312312312
+  --sert-provider='apps.token.default'

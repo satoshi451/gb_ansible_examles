@@ -1,0 +1,10 @@
+---
+- name: Create a directory if it does not exist
+  file:
+    path: "{{ basement_dir }}" #/tmp/ansible_temp_pb
+    state: directory
+    mode: '0755'
+- name: Create file
+  file:
+    path: "{{ basement_dir }}/{{ filename }}"
+    state: touch

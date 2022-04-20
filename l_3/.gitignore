@@ -1,0 +1,3 @@
+ansible_cm.log
+*.retry
+.vault_password.txt

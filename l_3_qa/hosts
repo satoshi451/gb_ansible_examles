@@ -1,0 +1,5 @@
+[server]
+server-cloud ansible_host=server.host ansible_connection=ssh
+
+[server:vars]
+file_path=/tmp/temp_file_created_over_ssh

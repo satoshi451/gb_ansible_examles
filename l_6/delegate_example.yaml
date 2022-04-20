@@ -1,0 +1,9 @@
+---
+- name: Example with deligate_to syntax
+  hosts: nginx
+  tasks:
+    - name: Request healthcheck
+      uri:
+        url: "http://{{ ansible_host }}:{{ nginx.port }}/health"
+        status_code: 200
+      delegate_to: 127.0.0.1

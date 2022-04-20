@@ -1,0 +1,6 @@
+---
+- name: Test external role
+  become: true
+  hosts: mysql
+  roles:
+    - {role: ansible-role-mysql, tags: [mysql]}
